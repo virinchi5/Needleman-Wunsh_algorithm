@@ -1,7 +1,0 @@
-SCORE=6 
-
-SU_M
-S_AM
-
-S_UM
-SA_M
