@@ -36,3 +36,5 @@ def validate_config(config: Needleman_wunsch_algorithm_config):
 
     if config.MAX_NUMBER_PATHS > constants.MAXIMUM_NUMBER_PATHS:
         return False, f"Value of parameter MAX_NUMBER_PATHS is too big. It should be less than {constants.MAXIMUM_NUMBER_PATHS}"
+
+    return True, ""
