@@ -2,6 +2,10 @@ import try_parse as tp
 
 
 class Config:
+    """
+    Class representing configuration
+    """
+
     def __init__(self, config_file = "config.txt"):
         self.config_file = config_file
         self.config_dict = self._load_config(self.config_file)

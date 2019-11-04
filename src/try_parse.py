@@ -1,3 +1,8 @@
+"""
+Functions trying parse text to number
+"""
+
+
 def to_int(text):
     try:
         return int(text), True

@@ -2,6 +2,10 @@ from config import Config
 
 
 class Needleman_wunsch_algorithm_config(Config):
+    """
+    Class representing Needleman-Wunsch algorithm config
+    """
+
     def __init__(self, config_file = "config.txt"):
         Config.__init__(self, config_file)
         try:

@@ -3,6 +3,10 @@ import constants
 
 
 def validate_input_data(seq1, seq2, config: Needleman_wunsch_algorithm_config):
+    """
+    Function validating input data: sequences and config
+    """
+
     validation_result = validate_config(config)
     if not validation_result[0]:
         return validation_result
@@ -14,6 +18,10 @@ def validate_input_data(seq1, seq2, config: Needleman_wunsch_algorithm_config):
 
 
 def validate_config(config: Needleman_wunsch_algorithm_config):
+    """
+    Function validating Needleman-Wunsch algorithm config
+    """
+
     parameters_names_list = ["SAME", "DIFF", "GP", "MAX_NUMBER_PATHS", "MAX_SEQ_LENGTH"]
 
     for param_name in parameters_names_list:

@@ -4,6 +4,10 @@ import numpy as np
 
 
 class Needleman_wunsch_algorithm:
+    """
+    Class representing Needleman-Wunsch algorithm
+    """
+
     def __init__(self, seq1, seq2, config):
         self.seq1 = "-" + seq1
         self.seq2 = "-" + seq2

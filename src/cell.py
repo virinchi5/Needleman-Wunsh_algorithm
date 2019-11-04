@@ -1,4 +1,8 @@
 class Cell:
+    """
+    Class representing cell of the matrix with value and directions
+    """
+
     def __init__(self):
         self.value = None
         self.directions = None
