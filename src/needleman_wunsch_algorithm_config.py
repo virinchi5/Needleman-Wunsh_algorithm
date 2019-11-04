@@ -1,12 +1,20 @@
 from config import Config
 
 
-class Needleman_wunsch_algorithm_config(Config):
+class NeedlemanWunschAlgorithmConfig(Config):
     """
     Class representing Needleman-Wunsch algorithm config
     """
 
-    def __init__(self, config_file = "config.txt"):
+    def __init__(self, config_file = "config.txt", manual = False):
+        if manual:
+            self.SAME = 0
+            self.DIFF = 0
+            self.GP = 0
+            self.MAX_NUMBER_PATHS = 0
+            self.MAX_SEQ_LENGTH = 0
+            return
+
         Config.__init__(self, config_file)
         try:
             self.SAME = self["SAME"]

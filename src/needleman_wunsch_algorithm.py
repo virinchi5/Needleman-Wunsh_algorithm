@@ -1,9 +1,10 @@
-from direction import Direction
-from cell import Cell
 import numpy as np
 
+from direction import Direction
+from cell import Cell
 
-class Needleman_wunsch_algorithm:
+
+class NeedlemanWunschAlgorithm:
     """
     Class representing Needleman-Wunsch algorithm
     """
@@ -22,32 +23,31 @@ class Needleman_wunsch_algorithm:
         n_row = self.len2 + 1
         n_col = self.len1 + 1
 
-        # Scoring matrix
-        H = np.empty((n_row, n_col), dtype = Cell)
+        scoring_matrix = np.empty((n_row, n_col), dtype = Cell)
         
-        H[0, 0] = Cell()
-        H[0, 0].value = 0
-        H[0, 0].directions = None
+        scoring_matrix[0, 0] = Cell()
+        scoring_matrix[0, 0].value = 0
+        scoring_matrix[0, 0].directions = None
         
         for j in range(1, n_col):
-            H[0, j] = Cell()
-            H[0, j].value = j * self.config.GP
-            H[0, j].directions = Direction.LEFT
+            scoring_matrix[0, j] = Cell()
+            scoring_matrix[0, j].value = j * self.config.GP
+            scoring_matrix[0, j].directions = Direction.LEFT
 
         for i in range(1, n_row):
-            H[i, 0] = Cell()
-            H[i, 0].value = i * self.config.GP
-            H[i, 0].directions = Direction.UP
+            scoring_matrix[i, 0] = Cell()
+            scoring_matrix[i, 0].value = i * self.config.GP
+            scoring_matrix[i, 0].directions = Direction.UP
 
             for j in range(1, n_col):
-                val_up = H[i-1, j].value + self.config.GP
-                val_left = H[i, j-1].value + self.config.GP
-                val_diag = H[i-1, j-1].value + (self.config.SAME if self.seq1[j] == self.seq2[i] else self.config.DIFF)
+                val_up = scoring_matrix[i-1, j].value + self.config.GP
+                val_left = scoring_matrix[i, j-1].value + self.config.GP
+                val_diag = scoring_matrix[i-1, j-1].value + (self.config.SAME if self.seq1[j] == self.seq2[i] else self.config.DIFF)
                 values = {Direction.UP: val_up, Direction.LEFT: val_left, Direction.DIAG: val_diag}
 
-                H[i, j] = self._get_cell(values)
+                scoring_matrix[i, j] = self._get_cell(values)
 
-        return H
+        return scoring_matrix
     
     
     def _get_cell(self, values):

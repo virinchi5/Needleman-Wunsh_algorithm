@@ -1,8 +1,9 @@
-from needleman_wunsch_algorithm_config import Needleman_wunsch_algorithm_config
 import constants
 
+from needleman_wunsch_algorithm_config import NeedlemanWunschAlgorithmConfig
 
-def validate_input_data(seq1, seq2, config: Needleman_wunsch_algorithm_config):
+
+def validate_input_data(seq1, seq2, config: NeedlemanWunschAlgorithmConfig):
     """
     Function validating input data: sequences and config
     """
@@ -17,7 +18,7 @@ def validate_input_data(seq1, seq2, config: Needleman_wunsch_algorithm_config):
     return True, ""
 
 
-def validate_config(config: Needleman_wunsch_algorithm_config):
+def validate_config(config: NeedlemanWunschAlgorithmConfig):
     """
     Function validating Needleman-Wunsch algorithm config
     """
