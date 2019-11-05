@@ -22,16 +22,17 @@ if __name__ == "__main__":
         if len(opts) != 4:
             print("Wrong options and parametres! \nUsage: add.py -a <sequence1> -b <sequence2> -c <config> -o <output> \nwhere sequence1, sequence2, config, output are txt files.")
         else:
-            # Create list of input arguments
-            inputs = []
+            # Create dictionary of input arguments
+            inputs = {}
             for opt, arg in opts:
-                inputs.append(arg)
+                opt = opt.replace("-", "")
+                inputs[opt] = arg
 
             # Create input variables for algorithm
-            fasta_file1 = inputs[0]
-            fasta_file2 = inputs[1]
-            configuration_file = inputs[2]
-            output_file = inputs[3]
+            fasta_file1 = inputs["a"]
+            fasta_file2 = inputs["b"]
+            configuration_file = inputs["c"]
+            output_file = inputs["o"]
             
             # Load sequences from files to strings
             sequence1 = fr.convert_fasta_to_string(fasta_file1)
