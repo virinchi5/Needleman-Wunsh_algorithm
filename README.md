@@ -2,7 +2,7 @@
 Project in Python language for Bioinformatics course starting october '20, aimed at implementing Needleman-Wunsh algorithm.
 
 ## System requirements
-Python 3.x, packages numpy, sys.
+Python 3.x, packages `numpy`, `sys`, `getopt`, `unittest`.
 
 ## How to download the program
 There are two ways to download the program, directly from github and by terminal.
@@ -28,4 +28,4 @@ In terminal by python from catalog src run file **run.py** with parameters that 
 
 e.g.: 
 
-/opt/anaconda/bin/python run.py -a ../data/seq1.txt -b ../data/seq2.txt -c ../configs/config.txt -o ../results/output.txt
+`/opt/anaconda/bin/python run.py -a ../data/seq1.txt -b ../data/seq2.txt -c ../configs/config.txt -o ../results/output.txt`
