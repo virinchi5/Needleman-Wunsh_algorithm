@@ -20,7 +20,7 @@ if __name__ == "__main__":
 
         # Check if the options' length is 4
         if len(opts) != 4:
-            print("Wrong options and parametres! \nUsage: add.py -a <sequence1> -b <sequence2> -c <config> -o <output> \nwhere sequence1, sequence2, config, output are txt files.")
+            print("Wrong options and parameters! \nUsage: add.py -a <sequence1> -b <sequence2> -c <config> -o <output> \nwhere sequence1, sequence2, config, output are txt files.")
         else:
             # Create dictionary of input arguments
             inputs = {}
@@ -52,5 +52,5 @@ if __name__ == "__main__":
                 print(validation_result[1])
 
     except getopt.GetoptError:
-        print("Wrong options and parametres! \nUsage: add.py -a <sequence1> -b <sequence2> -c <config> -o <output> \nwhere sequence1, sequence2, config, output are txt files.")
+        print("Wrong options and parameters! \nUsage: add.py -a <sequence1> -b <sequence2> -c <config> -o <output> \nwhere sequence1, sequence2, config, output are txt files.")
         sys.exit(2)
