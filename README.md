@@ -29,3 +29,8 @@ In terminal by python from catalog src run file **run.py** with parameters that 
 e.g.: 
 
 `/opt/anaconda/bin/python run.py -a ../data/seq1.txt -b ../data/seq2.txt -c ../configs/config.txt -o ../results/output.txt`
+
+## How to run the tests
+In terminal by python from catalog src run the following command:
+
+`/opt/anaconda/bin/python -m unittest tests.test_needleman_wunsch_algorithm -v`
