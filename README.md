@@ -28,4 +28,4 @@ In terminal by python from catalog src run file **run.py** with parameters that 
 
 e.g.: 
 
-/opt/anaconda/bin/python run.py ../data/seq1.txt ../data/seq2.txt ../configs/config.txt ../results/output.txt
+/opt/anaconda/bin/python run.py -a ../data/seq1.txt -b ../data/seq2.txt -c ../configs/config.txt -o ../results/output.txt
