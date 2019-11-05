@@ -23,7 +23,7 @@ def validate_config(config: NeedlemanWunschAlgorithmConfig):
     Function validating Needleman-Wunsch algorithm config
     """
 
-    parameters_names_list = ["SAME", "DIFF", "GP", "MAX_NUMBER_PATHS", "MAX_SEQ_LENGTH"]
+    parameters_names_list = ["SAME", "DIFF", "GAP_PENALTY", "MAX_NUMBER_PATHS", "MAX_SEQ_LENGTH"]
 
     for param_name in parameters_names_list:
         if not isinstance(config[param_name], int):

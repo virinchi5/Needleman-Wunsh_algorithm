@@ -31,17 +31,17 @@ class NeedlemanWunschAlgorithm:
         
         for j in range(1, n_col):
             scoring_matrix[0, j] = Cell()
-            scoring_matrix[0, j].value = j * self.config.GP
+            scoring_matrix[0, j].value = j * self.config.GAP_PENALTY
             scoring_matrix[0, j].directions = Direction.LEFT
 
         for i in range(1, n_row):
             scoring_matrix[i, 0] = Cell()
-            scoring_matrix[i, 0].value = i * self.config.GP
+            scoring_matrix[i, 0].value = i * self.config.GAP_PENALTY
             scoring_matrix[i, 0].directions = Direction.UP
 
             for j in range(1, n_col):
-                val_up = scoring_matrix[i-1, j].value + self.config.GP
-                val_left = scoring_matrix[i, j-1].value + self.config.GP
+                val_up = scoring_matrix[i-1, j].value + self.config.GAP_PENALTY
+                val_left = scoring_matrix[i, j-1].value + self.config.GAP_PENALTY
                 val_diag = scoring_matrix[i-1, j-1].value + (self.config.SAME if self.seq1[j] == self.seq2[i] else self.config.DIFF)
                 values = {Direction.UP: val_up, Direction.LEFT: val_left, Direction.DIAG: val_diag}
 
