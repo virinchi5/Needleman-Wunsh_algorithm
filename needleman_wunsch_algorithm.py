@@ -28,12 +28,12 @@ class NeedlemanWunschAlgorithm:
         scoring_matrix[0, 0] = Cell()
         scoring_matrix[0, 0].value = 0
         scoring_matrix[0, 0].directions = None
-        
+        #filling first row values
         for j in range(1, n_col):
             scoring_matrix[0, j] = Cell()
             scoring_matrix[0, j].value = j * self.config.GAP_PENALTY
             scoring_matrix[0, j].directions = Direction.LEFT
-
+        #filling first column    
         for i in range(1, n_row):
             scoring_matrix[i, 0] = Cell()
             scoring_matrix[i, 0].value = i * self.config.GAP_PENALTY
@@ -105,6 +105,9 @@ class NeedlemanWunschAlgorithm:
     def get_scoring_matrix(self):
         if self._scoring_matrix is None:
             self._scoring_matrix = self._prepare_scoring_matrix()
+        for i in range(self.len2 + 1):
+            for j in range(self.len1 + 1):
+                print(i,":",j,"--",self._scoring_matrix[i,j].value ," : : ",self._scoring_matrix[i,j].directions)    
         return self._scoring_matrix
     
     

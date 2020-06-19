@@ -24,3 +24,4 @@ class NeedlemanWunschAlgorithmConfig(Config):
             self.MAX_SEQ_LENGTH = self["MAX_SEQ_LENGTH"]
         except KeyError as ke:
             raise Exception(f"Key {ke} is missing in config file")
+            

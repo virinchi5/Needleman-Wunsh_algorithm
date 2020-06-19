@@ -1,36 +1,15 @@
-# Needleman-Wunsh algorithm
-Project in Python language for Bioinformatics course starting october '20, aimed at implementing Needleman-Wunsh algorithm.
+1. Run the needleman - wunsch algorithm to find the alignments
+	
+	python run.py -a d1.txt -b d2.txt -c config.txt -o nw_output.txt
 
-## System requirements
-Python 3.x, packages `numpy`, `sys`, `getopt`, `unittest`.
+2. Run perf_ssr module to get the tandem repeats in d1.txt (ref sequence)
 
-## How to download the program
-There are two ways to download the program, directly from github and by terminal.
+	perf -i d1.txt -u 2 
 
-### Github
+	Output will be in d1_perf.tsv
+ 
+ 3. Run the readFRMnw_output.py
 
-1. Click button **Clone or download**.
+ 	python readFRMnw_output.py
 
-2. Click button **Download ZIP**.
-
-3. Extract all files from the .zip file.
-
-### Terminal
-
-1. Copy link **https://github.com/paldynaagata/Needleman-Wunsh_algorithm**.
-
-2. In terminal write command **git clone** and paste above link.
-
-## How to run the program
-In terminal by python from catalog src run file **run.py** with parameters that are paths to files, according to the following formula:
-
-**run.py [path_to_seq_1] [path_to_seq_2] [path_to_config_file] [path_to_output_file]**
-
-e.g.: 
-
-`/opt/anaconda/bin/python run.py -a ../data/seq1.txt -b ../data/seq2.txt -c ../configs/config.txt -o ../results/output.txt`
-
-## How to run the tests
-In terminal by python from catalog src run the following command:
-
-`/opt/anaconda/bin/python -m unittest tests.test_needleman_wunsch_algorithm -v`
+ 	Output will be in the Frame_Shift.txt 	

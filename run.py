@@ -2,19 +2,21 @@ import fasta_reader as fr
 import input_data_validator as idv
 import sys
 import getopt
+from datetime import datetime
 
 from needleman_wunsch_algorithm_config import NeedlemanWunschAlgorithmConfig
 from needleman_wunsch_algorithm import NeedlemanWunschAlgorithm
 
 
 if __name__ == "__main__":
-    # Set the recursion limit
+    # Set the recursion limit i.e over writing the defualt value of 1000 recursion limit
     sys.setrecursionlimit(10000)
 
     # Get the arguments from the command-line except the filename
     argv = sys.argv[1:]
 
     try:
+        startTime = datetime.now()
         # Define the getopt parameters
         opts, args = getopt.getopt(argv, "a:b:c:o:", ["sequence1", "sequence2", "config", "output"])
 
@@ -50,6 +52,8 @@ if __name__ == "__main__":
                 nwa.print_results(output_file)
             else:
                 print(validation_result[1])
+            endTime = datetime.now()
+            print("Time taken: ",endTime - startTime)        
 
     except getopt.GetoptError:
         print("Wrong options and parameters! \nUsage: add.py -a <sequence1> -b <sequence2> -c <config> -o <output> \nwhere sequence1, sequence2, config, output are txt files.")

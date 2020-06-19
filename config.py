@@ -22,3 +22,4 @@ class Config:
 
     def __getitem__(self, key):
         return self.config_dict[key]
+    

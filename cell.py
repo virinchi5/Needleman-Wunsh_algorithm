@@ -18,3 +18,4 @@ class Cell:
         if isinstance(other, Cell):
             return self.value == other.value and self.directions == other.directions
         return False
+        

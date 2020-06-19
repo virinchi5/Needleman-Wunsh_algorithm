@@ -14,4 +14,5 @@ def to_float(text):
     try:
         return float(text), True
     except ValueError:
-        return text, False        
+        return text, False
+        
